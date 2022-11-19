@@ -95,6 +95,8 @@ int32_t hello_world_app() {
                     case InputKeyBack:
                         processing = false;
                         break;
+                    default:
+                    break;
                     }
                 }
             }
@@ -113,6 +115,6 @@ int32_t hello_world_app() {
     view_port_free(view_port);
     furi_message_queue_free(event_queue);
     delete_mutex(&state_mutex);
-
+    free(plugin_state);
     return 0;
 }
